@@ -2,7 +2,7 @@ from jinja2 import StrictUndefined
 from flask import Flask, render_template, redirect, request, flash, session, json, jsonify
 from flask_debugtoolbar import DebugToolbarExtension
 # add tables from model.py when ready
-from model import connect_to_db, db
+# from model import connect_to_db, db
 import os
 import urllib2
 import requests
@@ -33,7 +33,7 @@ def index():
 
 
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
 #     # We have to set debug=True here, since it has to be True at the point
 #     # that we invoke the DebugToolbarExtension
 #     app.debug = True
@@ -43,4 +43,4 @@ def index():
 #     # Use the DebugToolbar
 #     DebugToolbarExtension(app)
 
-#     app.run()
+    app.run()
