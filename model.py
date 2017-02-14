@@ -8,33 +8,31 @@ db = SQLAlchemy()
 #DB class#
 #######################
 
-#ISI Levels
-class ISI(db.Model):
-    """ISI Levels"""
+# #ISI Levels
+# class ISI(db.Model):
+#     """ISI Levels"""
     
-    __tablename__ = "isi"
+#     __tablename__ = "isi"
 
-    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    level = db.Column(db.String(20), nullable=False)
+#     level = db.Column(db.String(20), nullable=False, primary_key=True)
 
-    def __repr__(self):
-        """Provides helpful representation when printed"""
+#     def __repr__(self):
+#         """Provides helpful representation when printed"""
 
-        return ("<ISI id=%s level=%s>" % (self.id, self.level))
+#         return ("<ISI level=%s>" % (self.level))
 
-#USFS Levels
-class USFS(db.Model):
-    """USFS Levels"""
+# #USFS Levels
+# class USFS(db.Model):
+#     """USFS Levels"""
     
-    __tablename__ = "usfs"
+#     __tablename__ = "usfs"
 
-    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    level = db.Column(db.String(20), nullable=False)
+#     level = db.Column(db.String(20), nullable=False, primary_key=True)
 
-    def __repr__(self):
-        """Provide helpful representation when printed"""
+#     def __repr__(self):
+#         """Provide helpful representation when printed"""
 
-        return ("<USFS id=%s level=%s>" % (self.id, self.level))
+#         return ("<USFS level=%s>" % (self.level))
 
 #Skating exercises
 class Exercise(db.Model):
@@ -43,22 +41,22 @@ class Exercise(db.Model):
     __tablename__ = "exercises"
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    name = db.Column(db.string(200), nullable=False)
-    type = db.Column(db.string(20))
+    name = db.Column(db.String(200), nullable=False)
+    type = db.Column(db.String(20))
     #categorizes under isi level
-    isi_id = db.Column(db.Integer, db.ForeignKey('isi.id'), nullable=False)
+    isi_level = db.Column(db.String(20), nullable=False)
     #categorizes under usfs level
-    usfs_id = db.Column(db.Integer, db.ForeignKey('usfs.id'), nullable=False)
+    usfs_level = db.Column(db.String(20))
 
-    #define relationship to isi levels
-    isi_level = db.relationship('ISI', backref='exercises')
-    #define relationship to usfs levels
-    usfs_level = db.relationship('USFS', backref='exercises')
+    # #define relationship to isi levels
+    # isi = db.relationship('ISI', backref='exercises')
+    # #define relationship to usfs levels
+    # usfs = db.relationship('USFS', backref='exercises')
 
     def __repr__(self):
         """Provide helpful representation when printed"""
 
-        return("<Exercise id=%s name=%s type=%s isi_id=%s usfs_id=%s>" % (self.id, self.name, self.type, self.isi_id, self.usfs_id))
+        return("<Exercise id=%s name=%s type=%s isi_level=%s usfs_level=%s>" % (self.id, self.name, self.type, self.isi_level, self.usfs_level))
 
 ######################
 #Helper functions
@@ -67,7 +65,7 @@ class Exercise(db.Model):
 def connect_to_db(app):
     """Connect the database to app"""
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///travels'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///skatedb'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)
