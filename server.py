@@ -1,15 +1,12 @@
+"""Server for project"""
+
 from jinja2 import StrictUndefined
 from flask import Flask, render_template, redirect, request, flash, session, json, jsonify
 from flask_debugtoolbar import DebugToolbarExtension
 # add tables from model.py when ready
-# from model import connect_to_db, db
-import os
-import urllib2
-import requests
+from model import connect_to_db, db, Exercise
 
 app = Flask(__name__)
-
-app.secret_key = "itsasecret"
 
 # raises error if you use an undefined variable in Jinja2
 app.jinja_env.undefined = StrictUndefined
@@ -18,6 +15,8 @@ app.jinja_env.undefined = StrictUndefined
 @app.route('/')
 def index():
     """Homepage."""
+
+
 
     return render_template("homepage.html")
 

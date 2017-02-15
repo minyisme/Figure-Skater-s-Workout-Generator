@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>Skate Exercise Generator</title>
+</head>
+<body>
+    <h1>Welcome to Skating Exercises Generator</h1>
+    <div class="generator">
+        <form class="generator-form" action="" method="GET">
+            <label>Choose the number of minutes you'll be on ice.
+                <input type="radio" value="30" name="practice-time">30
+                <input type="radio" value="60" name="practice-time">60
+                <input type="radio" value="90" name="practice-time">90
+                <input type="radio" value="120" name="practice-time">120
+            </label>
+            <label>Select all type(s) of exercises you want to work on.
+                <input type="checkbox" name="exercise-type" value="jumps">Jumps
+                <input type="checkbox" name="exercise-type" value="spins">Spins
+                <input type="checkbox" name="exercise-type" value="edges">Edges
+                <input type="checkbox" name="exercise-type" value="footwork">Footwork
+            </label>
+            <label>
+                <input type="submit" value="Generate">
+            </label>
+        </form>   
+    </div>
+</body>
+</html>
