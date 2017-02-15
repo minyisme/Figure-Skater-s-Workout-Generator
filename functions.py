@@ -20,8 +20,10 @@ def relevant_levels(level):
         else:
             relevant_levels.append(each)
             break
+            break
 
     return relevant_levels
+
 
 def all_exercises(relevant_levels):
     """Gets all exercises from database based on the relevant levels"""
@@ -36,17 +38,18 @@ def all_exercises(relevant_levels):
 
     return exercises
 
+
 def type_to_dbtype(type):
     """Gets a db type from types in the input field"""
 
     if type == "Jumps":
-        return ["Jump"]
+        return "Jump"
     elif type == "Spins":
-        return ["Spin"]
+        return "Spin"
     elif type == "Edges":
-        return ["Edge"]
+        return "Edge"
     elif type == "Footwork":
-        return ["Turn", "Stop"]
+        return "Turn", "Stop"
 
 
 def exercises_by_type(exercises, types):
@@ -54,16 +57,31 @@ def exercises_by_type(exercises, types):
 
     # add all exercises of a type to list
     exercises_of_type = []
-    for exercise in exercises:
-        for type in types:
-        if exercise.type==type:
-            exercises_of_type.append(exercise.name)
+    for type in types:
+        exercises_by_type = []
+        for exercise in exercises:
+            if exercise.type==type:
+                exercises_by_type.append(exercise.name)
+        exercises_of_type.append(exercises_by_type)
 
     return exercises_of_type
 
 
+def num_exercises(time, exercise_types):
+    """Number of exercises to practice of each type"""
+
+    # use 5min to practice each exercise
+    return ((int(time) - 10)/len(exercise_types)/5)
 
 
+def rand_exercises(exercises_of_type, num_exercises):
+    """Outputs exercises for user to practice"""
+
+    exercises = []
+    for num in range(num_exercises):
+        exercises.append(random.choice(exercises_of_type))
+
+    return exercises
 
 
 

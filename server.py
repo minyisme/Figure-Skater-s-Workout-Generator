@@ -29,11 +29,47 @@ def index():
 def generate():
     """Workout result"""
 
-    level = request.args.get("skater-level")
-    time = request.args.get("practice-time")
+    # gets input from user
+    level = str(request.args.get("skater-level"))
+    time = str(request.args.get("practice-time"))
     exercise_types = request.args.getlist("exercise-type")
 
-    print level, time, exercise_types
+    # change unicode to string
+    exercise_types_str = []
+    for exercise in exercise_types:
+        exercise_types_str.append(str(exercise))
+
+    # gets all relevant exercises to user's level
+    rel_levels = functions.relevant_levels(level)
+    all_exercises = functions.all_exercises(rel_levels)
+
+    # print "rel levels", rel_levels
+
+    # gets all types of exercises user wants to practice
+    db_ex_types = []
+    for a_type in exercise_types_str:
+        print "yoyoyoy", a_type
+        print type(a_type)
+        db_ex_types.append(functions.type_to_dbtype(a_type))
+
+    # print db_ex_types
+
+    # gets number of exercises of each type to practice
+    num_ex = functions.num_exercises(time, db_ex_types)
+
+    # print num_ex
+
+    # gets all exercises of a relevant type
+    rel_ex = functions.exercises_by_type(all_exercises, db_ex_types)
+
+    # print rel_ex
+
+    # for each exercise type in db_ex_types, gets num_ex of random exercises
+    practice = []
+    for each in rel_ex:
+        practice.append(functions.rand_exercises(each, num_ex))
+
+    # print "PRACTICE!!!!!!", practice
 
     return render_template("homepage.html")
 
