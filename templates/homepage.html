@@ -1,23 +1,43 @@
 <!doctype html>
 <html>
 <head>
-    <title>Skate Exercise Generator</title>
+    <title>Skate Workout Generator</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
 </head>
 <body>
-    <h1>Welcome to Skating Exercises Generator</h1>
+    <h1>Welcome to the Figure Skating Workout Generator</h1>
     <div class="generator">
-        <form class="generator-form" action="" method="GET">
+        <form class="generator-form" action="/generate" method="GET">
+            <label>What level skater are you?
+                <select name="skater-level">
+                    <option value="Alpha">Alpha</option>
+                    <option value="Beta">Beta</option>
+                    <option value="Gamma">Gamma</option>
+                    <option value="Delta">Delta</option>
+                    <option value="Freestyle-1">Freestyle 1</option>
+                    <option value="Freestyle-2">Freestyle 2</option>
+                    <option value="Freestyle-3">Freestyle 3</option>
+                    <option value="Freestyle-4">Freestyle 4</option>
+                    <option value="Freestyle-5">Freestyle 5</option>
+                    <option value="Freestyle-6">Freestyle 6</option>
+                    <option value="Freestyle-7">Freestyle 7</option>
+                    <option value="Freestyle-8">Freestyle 8</option>
+                    <option value="Freestyle-9">Freestyle 9</option>
+                    <option value="Freestyle-10">Freestyle 10</option>
+                </select>
             <label>Choose the number of minutes you'll be on ice.
-                <input type="radio" value="30" name="practice-time">30
-                <input type="radio" value="60" name="practice-time">60
-                <input type="radio" value="90" name="practice-time">90
-                <input type="radio" value="120" name="practice-time">120
+                <select name="practice-time">
+                    <option value="30">30</option>
+                    <option value="60">60</option>
+                    <option value="90">90</option>
+                    <option value="120">120</option>
+                </select>
             </label>
             <label>Select all type(s) of exercises you want to work on.
-                <input type="checkbox" name="exercise-type" value="jumps">Jumps
-                <input type="checkbox" name="exercise-type" value="spins">Spins
-                <input type="checkbox" name="exercise-type" value="edges">Edges
-                <input type="checkbox" name="exercise-type" value="footwork">Footwork
+                <input type="checkbox" name="exercise-type" value="jumps" class="type">Jumps
+                <input type="checkbox" name="exercise-type" value="spins" class="type">Spins
+                <input type="checkbox" name="exercise-type" value="edges" class="type">Edges
+                <input type="checkbox" name="exercise-type" value="footwork" class="type">Footwork
             </label>
             <label>
                 <input type="submit" value="Generate">
@@ -26,3 +46,12 @@
     </div>
 </body>
 </html>
+<!-- 
+<script type="text/javascript">
+    
+    function generateWorkout(result) {
+
+        var num_min = $(".time:checked").val();
+        var ex_types = $(".type:checked").val();
+    }
+</script> -->
