@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Skate Workout Generator</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+    <h1>Generated Workout</h1>
+    <div>5 minute warmup</div>
+    <div>10 minutes of each of these exercises:
+        <ul>
+            {% for exercise in exercises_to_practice %}
+                <li> {{ exercise }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>5 minute cool down</div>
+</body>
+</html>

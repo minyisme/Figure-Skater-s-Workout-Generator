@@ -69,9 +69,15 @@ def generate():
     for each in rel_ex:
         practice.append(functions.rand_exercises(each, num_ex))
 
+    exercises_to_practice = []
+    for each in practice:
+        for item in each:
+            exercises_to_practice.append(item)
+
+
     # print "PRACTICE!!!!!!", practice
 
-    return render_template("homepage.html")
+    return render_template("workout.html", exercises_to_practice=exercises_to_practice)
 
 
 

@@ -71,7 +71,7 @@ def num_exercises(time, exercise_types):
     """Number of exercises to practice of each type"""
 
     # use 5min to practice each exercise
-    return ((int(time) - 10)/len(exercise_types)/5)
+    return ((int(time) - 10)/len(exercise_types)/10)
 
 
 def rand_exercises(exercises_of_type, num_exercises):
