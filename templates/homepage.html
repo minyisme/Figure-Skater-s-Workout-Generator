@@ -3,8 +3,32 @@
 <head>
     <title>Skate Workout Generator</title>
     <script src="http://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
+
+
+    <style>
+
+    body {
+        background-image: url(/static/skate.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        font-family: sans-serif;
+        color: 1B3B57;
+    }
+
+    .box {
+        margin: 10% 10% 10% 10%;
+        border: solid 1B3B57 5px;
+        opacity: .8;
+        background-color: white;
+    }
+    
+    </style>
+
+    <div class="box">
     <h1>Welcome to the Figure Skating Workout Generator</h1>
     <div class="generator">
         <form class="generator-form" action="/generate" method="GET">
@@ -33,7 +57,7 @@
                     <option value="120">120</option>
                 </select>
             </label>
-            <label>Select all type(s) of exercises you want to work on.
+            <label>Select type(s) of exercises you want to work on: 
                 <input type="checkbox" name="exercise-type" value="Jumps" class="type">Jumps
                 <input type="checkbox" name="exercise-type" value="Spins" class="type">Spins
                 <input type="checkbox" name="exercise-type" value="Edges" class="type">Edges
@@ -43,6 +67,7 @@
                 <input type="submit" value="Generate">
             </label>
         </form>   
+    </div>
     </div>
 </body>
 </html>

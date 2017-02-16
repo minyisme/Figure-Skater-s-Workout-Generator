@@ -3,8 +3,31 @@
 <head>
     <title>Skate Workout Generator</title>
     <script src="http://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
+
+    <style>
+
+    body {
+        background-image: url(/static/skate.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        font-family: sans-serif;
+        color: 1B3B57;
+    }
+
+    .box {
+        margin: 10% 10% 10% 10%;
+        border: solid 1B3B57 5px;
+        opacity: .8;
+        background-color: white;
+    }
+
+    </style>
+
+    <div class="box">
     <h1>Generated Workout</h1>
     <div>5 minute warmup</div>
     <div>10 minutes of each of these exercises:
@@ -19,6 +42,7 @@
         <form class="back" action="/" method="GET">
             <input type="submit" value="back">
         </form>
+    </div>
     </div>
 </body>
 </html>
