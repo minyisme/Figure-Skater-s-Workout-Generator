@@ -42,17 +42,29 @@
         padding: 0 0 20px 0;
     }
 
-    .exercise-detail {
+    .exercise-list {
         text-align: center;
+    }
+
+    .exercise-detail {
+        text-align: left;
+    }
+
+    .center {
+        width: 40%;
+        margin: 0 auto;
+        text-align: left;
     }
 
     </style>
 
     <div class="box">
     <h1 class="title">Generated Practice Workout</h1>
+    <strong>
     <div class="exercise">5 minute warmup</div>
     <div class="exercise">10 minutes of each of these exercises:
-        <ul>
+    <div class="center">
+        <ul class="exercise-list">
             {% for exercise in exercises_to_practice %}
                 <li class="exercise-detail"> {{ exercise }}</li>
             {% endfor %}
@@ -61,9 +73,11 @@
     <div class="exercise">5 minute cool down</div>
     <div>
         <form class="back" action="/" method="GET">
-            <input type="submit" value="back">
+            <input type="submit" value="Back">
         </form>
     </div>
+    </div>
+    </strong>
     </div>
 </body>
 </html>
