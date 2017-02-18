@@ -19,25 +19,46 @@
     }
 
     .box {
-        margin: 10% 10% 10% 10%;
+        margin: 10% 20% 10% 20%;
+        padding: 5px 5px 5px 5px;
         border: solid 1B3B57 5px;
         opacity: .8;
         background-color: white;
     }
 
+    .title {
+        text-align: center;
+    }
+
+    .exercise {
+        color: 025C9C;
+        display: block;
+        text-align: center;
+        margin: 3% 0 3% 0;
+    }
+
+    .back {
+        text-align: center;
+        padding: 0 0 20px 0;
+    }
+
+    .exercise-detail {
+        text-align: center;
+    }
+
     </style>
 
     <div class="box">
-    <h1>Generated Workout</h1>
-    <div>5 minute warmup</div>
-    <div>10 minutes of each of these exercises:
+    <h1 class="title">Generated Practice Workout</h1>
+    <div class="exercise">5 minute warmup</div>
+    <div class="exercise">10 minutes of each of these exercises:
         <ul>
             {% for exercise in exercises_to_practice %}
-                <li> {{ exercise }}</li>
+                <li class="exercise-detail"> {{ exercise }}</li>
             {% endfor %}
         </ul>
     </div>
-    <div>5 minute cool down</div>
+    <div class="exercise">5 minute cool down</div>
     <div>
         <form class="back" action="/" method="GET">
             <input type="submit" value="back">
