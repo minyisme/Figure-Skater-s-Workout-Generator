@@ -6,13 +6,7 @@ Figure Skater Workout Generator is an app built for figure skaters who want a se
 
 ## Tech Stack                   
 
-##### Backend
-
-[Python](https://www.python.org/), [Flask](http://flask.pocoo.org/), [SQLAlchemy](http://www.sqlalchemy.org/), [PostgreSQL](https://www.postgresql.org/)
-
-##### Frontend
-
-JavaScript, [jQuery](https://jquery.com/), AJAX, [Jinja2](http://jinja.pocoo.org/docs/dev/), HTML, CSS
+[Python](https://www.python.org/), [Flask](http://flask.pocoo.org/), [SQLAlchemy](http://www.sqlalchemy.org/), [PostgreSQL](https://www.postgresql.org/), [Jinja2](http://jinja.pocoo.org/docs/dev/), HTML, CSS
 
 
 ## Features
