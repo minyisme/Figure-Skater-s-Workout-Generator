@@ -8,31 +8,6 @@ db = SQLAlchemy()
 #DB class#
 #######################
 
-# #ISI Levels
-# class ISI(db.Model):
-#     """ISI Levels"""
-    
-#     __tablename__ = "isi"
-
-#     level = db.Column(db.String(20), nullable=False, primary_key=True)
-
-#     def __repr__(self):
-#         """Provides helpful representation when printed"""
-
-#         return ("<ISI level=%s>" % (self.level))
-
-# #USFS Levels
-# class USFS(db.Model):
-#     """USFS Levels"""
-    
-#     __tablename__ = "usfs"
-
-#     level = db.Column(db.String(20), nullable=False, primary_key=True)
-
-#     def __repr__(self):
-#         """Provide helpful representation when printed"""
-
-#         return ("<USFS level=%s>" % (self.level))
 
 #Skating exercises
 class Exercise(db.Model):
