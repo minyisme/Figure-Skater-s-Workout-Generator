@@ -23,11 +23,6 @@ class Exercise(db.Model):
     #categorizes under usfs level
     usfs_level = db.Column(db.String(20))
 
-    # #define relationship to isi levels
-    # isi = db.relationship('ISI', backref='exercises')
-    # #define relationship to usfs levels
-    # usfs = db.relationship('USFS', backref='exercises')
-
     def __repr__(self):
         """Provide helpful representation when printed"""
 
